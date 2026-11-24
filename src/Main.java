@@ -22,7 +22,7 @@ public class Main {
         RaceTrack track = createTrack();
 
         UserDriver userDriver = new UserDriver("Player");
-        Car playerCar = new DefaultCar(null);
+        Car playerCar = new DefaultCar(userDriver);
 
         Car opponentCar = OpponentFactory.createRandomOpponent();
 
@@ -87,7 +87,7 @@ public class Main {
         Timer gameTimer = new Timer(120, null);
 
         gameTimer.addActionListener((ActionEvent e) -> {
-            if (race. isFinished()) {
+            if (race.isFinished()) {
                 gameTimer.stop();
                 racePanel.repaint();
 
